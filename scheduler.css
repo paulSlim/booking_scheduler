@@ -1,0 +1,62 @@
+.scheduler_container {
+  width: 300px;
+  position: relative;
+  margin: 1em auto;
+}
+
+.scheduler {
+  margin-top: 1em;
+  width: 300px;
+}
+
+.sch_title {
+  text-align: center;
+}
+
+.prev_sch,
+.next_sch {
+  position: absolute;
+  font-size: 1.2em;
+  top: 0;
+  cursor: pointer;
+}
+
+.prev_sch {
+  display: none;
+  left: 10%;
+}
+
+.next_sch {
+  right: 10%;
+}
+
+.day,
+.days-in-week,
+.empty {
+  border: 1px solid white;
+  display: inline-block;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.day:hover {
+  background-color: teal;
+}
+
+.booked:hover::before,
+.today:hover::before {
+  content: attr(data-tooltip);
+  position: absolute;
+  transition: 5s ease;
+  top: -.25rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(-100%);
+  padding: 0.25rem;
+  text-align: center;
+  width: max-content;
+  background: #cea8a8;
+}
