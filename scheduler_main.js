@@ -3,7 +3,7 @@ class Render {
     this.computedDates = new ComputeDates();
     this.schedulerDiv = document.querySelector(".scheduler");
     this.schMonthYear = document.querySelector(".sch_title");
-    this.dayList = ['pn', 'wt', 'śr', 'czw', 'pt', 'sb', 'nd']
+    this.dayList = ['pn', 'wt', 'śr', 'czw', 'pt', 'sb', 'nd'] // the days of the week in Polish (PL) standard
     this.monthList = [
       "Styczeń",
       "Luty",
@@ -17,7 +17,7 @@ class Render {
       "Październik",
       "Listopad",
       "Grudzień",
-    ];
+    ]; // months in Polish (PL) standard
 
     this.bookingsCurrentYear = [
       [], //styczeń
@@ -121,7 +121,7 @@ class Render {
       regDays[this.computedDates.currentDay - 1].classList.add("today");
       regDays[this.computedDates.currentDay - 1].setAttribute(
         "data-tooltip",
-        "dzisiaj"
+        "dzisiaj" // PL
       );
       regDays[this.computedDates.currentDay - 1].style.background = "gray";
     };
@@ -140,29 +140,8 @@ class Render {
     let i = 0;
 
     this.renderingFn(i, this.dayList.length - 1, 'days-in-week', this.dayList);
-    this.renderingFn(i, this.computedDates.firstDayOfMonthIndex(month, year) - 2, 'empty', '');
+    this.renderingFn(i, this.computedDates.firstDayOfMonthIndex(month, year) - 2, 'empty', i);
     this.renderingFn(i + 1, this.computedDates.daysInMonth(month, year), 'day', i);
-
-
-    // for (let i = 0; i <= this.dayList.length - 1; i++) {
-    //   const dayInWeek = document.createElement('div');
-    //   dayInWeek.setAttribute('class', 'days-in-week');
-    //   dayInWeek.textContent = this.dayList[i];
-    //   this.schedulerDiv.appendChild(dayInWeek);
-    // };
-
-    // for (let i = 0; i <= this.computedDates.firstDayOfMonthIndex(month, year) - 2; i++) {
-    //   const day = document.createElement('div');
-    //   day.setAttribute('class', 'empty');
-    //   this.schedulerDiv.appendChild(day);
-    // }
-
-    // for (let i = 1; i <= this.computedDates.daysInMonth(month, year); i++) {
-    //   const day = document.createElement("div");
-    //   day.setAttribute("class", "day");
-    //   day.textContent = i;
-    //   this.schedulerDiv.appendChild(day);
-    // }
 
     this.renderBookedDays(month, year);
     if (
@@ -179,7 +158,7 @@ class Render {
     bookings[month - 1].forEach((bookedDay) => {
       regDays[bookedDay - 1].style.backgroundColor = "orange";
       regDays[bookedDay - 1].classList.add("booked");
-      regDays[bookedDay - 1].setAttribute("data-tooltip", "zarezerwowane");
+      regDays[bookedDay - 1].setAttribute("data-tooltip", "zarezerwowane"); // PL 
     });
   }
 }

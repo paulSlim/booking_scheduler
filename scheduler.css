@@ -33,7 +33,6 @@
 .day,
 .days-in-week,
 .empty {
-  border: 1px solid white;
   display: inline-block;
   position: relative;
   width: 40px;
@@ -41,6 +40,10 @@
   line-height: 40px;
   text-align: center;
   cursor: pointer;
+}
+
+.empty {
+  color: transparent;
 }
 
 .day:hover {
