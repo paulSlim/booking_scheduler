@@ -1,0 +1,3 @@
+# Booking scheduler is a simple calendar JavaScript app where you can register reservations and make bookings. Designed for tourism industry. 
+
+This JavaScript app is after inital commit being under heavy development. The current repository holds oop code and renders basic calendar elements. In order to render booked days at this state of app, you need to enter scheduler_main.js file and fill days in arrays under this.bookingsCurrentYear and this.consecutiveYear variables. Further versions will be developed in node.js and options to make swift reservations will be added   
